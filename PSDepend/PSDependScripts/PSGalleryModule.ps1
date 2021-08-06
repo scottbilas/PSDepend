@@ -266,7 +266,7 @@ if($Existing)
         [System.Management.Automation.SemanticVersion]::TryParse($ExistingVersion, [ref]$parsedSemanticVersion) -and
         [System.Management.Automation.SemanticVersion]::TryParse($GalleryVersion, [ref]$parsedTempSemanticVersion)
     ) {
-        $GalleryVersion -le $parsedSemanticVersion
+        $parsedTempSemanticVersion -le $parsedSemanticVersion
     }
     elseif ([System.Version]::TryParse($ExistingVersion, [ref]$parsedVersion)) {
         $GalleryVersion -le $parsedVersion
