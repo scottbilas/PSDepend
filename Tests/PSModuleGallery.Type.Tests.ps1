@@ -8,7 +8,7 @@ Import-Module (Join-Path $ENV:BHProjectPath $ENV:BHProjectName) -Force
 # Maybe use a convention for describe/context/it... these are all over the place...
 # Pull requests welcome!
 
-InModuleScope 'PSDepend' {
+InModuleScope ('{0}' -f $ENV:BHProjectName) {
 
     $TestDepends = Join-Path $ENV:BHProjectPath "Tests/DependFiles"
     $PSVersion = $PSVersionTable.PSVersion.Major

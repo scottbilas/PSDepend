@@ -1,6 +1,9 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/ns9lkbkvopuup853/branch/master?svg=true)](https://ci.appveyor.com/project/matt2005/psdepend/branch/master)
 
-PSDepend
+** This is a fork of PSDepend as the [https://rgithub.com/RamblingCookieMonster/PSDepend](master repo) appears to have been abandoned **
+I've created this so I fix some issues that are causing me pain.
+
+PSDepend2
 ========
 
 This is a simple PowerShell dependency handler.  You might loosely compare it to `bundle install` in the Ruby world or `pip install -r requirements.txt` in the Python world.

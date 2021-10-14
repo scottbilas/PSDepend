@@ -10,7 +10,7 @@ ModuleVersion = '0.4.0'
 GUID = '63ea9e2a-320d-43ff-a11a-4930ca03cce6'
 
 # Author of this module
-Author = 'Warren Frame'
+Author = 'Warren Frame/Matthew Hilton'
 
 # Company or vendor of this module
 #CompanyName = 'Unknown'
