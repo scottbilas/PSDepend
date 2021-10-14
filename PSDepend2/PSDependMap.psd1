@@ -1,6 +1,6 @@
 # This defines dependencies. Feel free to create your own
 # Top level node is the dependency name
-#   Script is the script to run. These are stored in \PSDepend\PSDependScripts
+#   Script is the script to run. These are stored in \PSDepend2\PSDependScripts
 #   Description is a quick description of the dependency script
 #   Supports is a way to filter supported platforms:  core, windows, macos, linux
 
