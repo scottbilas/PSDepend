@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/4mwhsx9pkfpc1j48/branch/master?svg=true)](https://ci.appveyor.com/project/RamblingCookieMonster/psdepend/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/ns9lkbkvopuup853/branch/master?svg=true)](https://ci.appveyor.com/project/matt2005/psdepend/branch/master)
 
 PSDepend
 ========
