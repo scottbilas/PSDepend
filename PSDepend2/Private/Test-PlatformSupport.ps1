@@ -2,35 +2,38 @@
     [cmdletbinding()]
     param
     (
-        $Type,
-        [string[]]
+		[System.String]
+		$Type,
+        [Parameter(Mandatory)]
+        [ValidateSet('Core', 'Linux', 'MacOS', 'Windows', 'Windows:Desktop')]
+        [System.String[]]
         $Support
     )
+	$Supported=$false
     $os = Get-OSEnvironment
-    foreach ($supportEntry in $Support)
+    # Check for PS5 Desktop Support
+	if ($psEdition -eq 'Desktop')
+	{
+		# This will only run if the Supported Platform is Windows:Desktop
+		$Supported= $Support -contains 'Windows'
+	}
+    # Check for PS Core and OS Support
+    if ($psEdition -eq 'Core')
     {
-        $supportOS, $edition = $supportEntry -split ':'
-        if ($edition -eq 'Desktop')
+        foreach ($supportEntry in $Support)
         {
-            return $PSVersionTable.PSEdition -eq 'Desktop'
-        }
-        else
-        {
-            if ($supportOS -eq 'core')
+            if ($supportEntry -eq 'core')
             {
-                if ($PSVersionTable.PSEdition -eq 'Core')
-                {
-                    return $true
-                }
+                $Supported=$true
             }
             else
             {
-                if ($supportOS -eq $os)
+                if ($supportEntry -eq $os)
                 {
-                    return $true
+                    $Supported=$true
                 }
             }
         }
     }
-    return $false
+    return $Supported
 }

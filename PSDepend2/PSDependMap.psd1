@@ -9,84 +9,84 @@
     Chocolatey = @{
         Script = 'Chocolatey.ps1'
         Description = 'Install a Chocolatey package from a Chocolatey feed'
-        Supports = 'windows:desktop','windows:core'
+        Supports = 'windows'
     }
     
     Command = @{
         Script = 'Command.ps1'
         Description = 'Invoke a command in PowerShell'
-        Supports = 'windows:desktop', 'windows:core', 'macos:core', 'linux'
+        Supports = 'core', 'windows', 'macos', 'linux'
     }
 
     DotnetSdk = @{
         Script = 'DotnetSdk.ps1'
         Description = "Installs the .NET Core SDK"
-        Supports = 'windows:desktop', 'windows:core', 'macos:core', 'linux:core'
+        Supports = 'core', 'windows', 'macos', 'linux'
     }
 
     FileDownload = @{
         Script = 'FileDownload.ps1'
         Description = 'Download a file'
-        Supports = 'windows:desktop', 'windows:core'
+        Supports = 'windows'
     }
 
     FileSystem = @{
         Script = 'FileSystem.ps1'
         Description = 'Copy a file or folder'
-        Supports = 'windows:desktop', 'windows:core'
+        Supports = 'windows'
     }
 
     Git = @{
         Script = 'Git.ps1'
         Description = 'Clone a git repository'
-        Supports = 'windows:desktop', 'windows:core', 'macos:core', 'linux:core'
+        Supports = 'core', 'windows', 'macos', 'linux'
     }
 
     GitHub = @{
         Script = 'GitHub.ps1'
         Description = 'Download and extract a GitHub repo'
-        Supports = 'windows:desktop', 'windows:core', 'macos:core', 'linux:core'
+        Supports = 'core', 'windows', 'macos', 'linux'
     }
 
     Npm = @{
         Script = 'Npm.ps1'
         Description = 'Install a node package'
-        Supports = 'windows:desktop', 'windows:core', 'macos:core', 'linux:core'
+        Supports = 'core', 'windows', 'macos', 'linux'
     }
 
     Noop = @{
         Script = 'Noop.ps1'
         Description = 'Display parameters that a depends script would receive. Use for testing and validation'
-        Supports = 'windows:desktop', 'windows:core', 'macos:core', 'linux:core'
+        Supports = 'core', 'windows', 'macos', 'linux'
     }
 
     Nuget = @{
         Script = 'Nuget.ps1'
         Description = 'Install a Nuget package from a Nuget feed'
-        Supports = 'windows:desktop', 'windows:core', 'macos:core', 'linux:core'
+        Supports = 'core', 'windows', 'macos', 'linux'
     }
 
     Package = @{
         Script = 'Package.ps1'
         Description = 'EXPERIMENTAL: Install a package via PackageManagement Install-Package'
-        Supports = 'windows:desktop', 'windows:core', 'macos:core', 'linux:core'
+        Supports = 'core', 'windows', 'macos', 'linux'
     }
 
     PSGalleryModule = @{
         Script= 'PSGalleryModule.ps1'
         Description = 'Install a PowerShell module from the PowerShell Gallery'
-        Supports = 'windows:desktop', 'windows:core', 'macos:core', 'linux:core'
+        Supports = 'core', 'windows', 'macos', 'linux'
     }
 
     PSGalleryNuget = @{
         Script = 'PSGalleryNuget.ps1'
         Description = 'Install a PowerShell module from the PowerShell Gallery without the PowerShellGet dependency'
-        Supports = 'windows:desktop', 'windows:core', 'macos:core', 'linux:core'
+        Supports = 'core', 'windows', 'macos', 'linux'
     }
 
     Task = @{
         Script = 'Task.ps1'
         Description = 'Support dependencies by handling simple tasks'
-        Supports = 'windows:desktop', 'windows:core', 'macos:core', 'linux:core'
+        Supports = 'core', 'windows', 'macos', 'linux'
     }
 }
