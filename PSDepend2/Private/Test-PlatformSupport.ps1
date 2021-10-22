@@ -1,42 +1,36 @@
 ﻿function Test-PlatformSupport {
     [cmdletbinding()]
-    param(
+    param
+    (
         $Type,
-        [string[]]$Support
+        [string[]]
+        $Support
     )
-
-    # test core/full
-    if('Core' -eq $PSVersionTable.PSEdition) {
-        if($Support -notcontains 'core') {
-            Write-Verbose "Supported platforms [$Support] for type [$Type] does not contain [core].  Pull requests welcome!"
-            return $false
+    $os = Get-OSEnvironment
+    foreach ($supportEntry in $Support)
+    {
+        $supportOS, $edition = $supportEntry -split ':'
+        if ($edition -eq 'Desktop')
+        {
+            return $PSVersionTable.PSEdition -eq 'Desktop'
+        }
+        else
+        {
+            if ($supportOS -eq 'core')
+            {
+                if ($PSVersionTable.PSEdition -eq 'Core')
+                {
+                    return $true
+                }
+            }
+            else
+            {
+                if ($supportOS -eq $os)
+                {
+                    return $true
+                }
+            }
         }
     }
-    else { # full windows powershell
-        if($Support -notcontains 'windows') {
-            Write-Verbose "Supported platforms [$Support] for type [$Type] does not contain [windows].  Pull requests welcome!"
-            return $false
-        }
-    }
-
-    if($IsLinux) {
-        if($Support -notcontains 'linux') {
-            Write-Verbose "Supported platforms [$Support] for type [$Type] does not contain [linux].  Pull requests welcome!"
-            return $false
-        }
-    }
-    if($IsMacOS) {
-        if($Support -notcontains 'macos') {
-            Write-Verbose "Supported platforms [$Support] for type [$Type] does not contain [macos].  Pull requests welcome!"
-            return $false
-        }
-    }
-    if($IsWindows) {
-        # covers support for core powershell on windows
-        if($Support -notcontains 'windows') {
-            Write-Verbose "Supported platforms [$Support] for type [$Type] does not contain [windows].  Pull requests welcome!"
-            return $false
-        }
-    }
-    $true
+    return $false
 }
