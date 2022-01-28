@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/ns9lkbkvopuup853/branch/master?svg=true)](https://ci.appveyor.com/project/matt2005/psdepend/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/ns9lkbkvopuup853/branch/master?svg=true)](https://ci.appveyor.com/project/matt2005/psdepend2/branch/master)
 
 ## **This is a fork of PSDepend as the [master repo](https://rgithub.com/RamblingCookieMonster/PSDepend) appears to have been abandoned**
 
