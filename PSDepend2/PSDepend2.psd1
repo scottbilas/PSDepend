@@ -4,7 +4,7 @@
 RootModule = 'PSDepend2.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.4.0'
+ModuleVersion = '0.4.1'
 
 # ID used to uniquely identify this module
 GUID = '63ea9e2a-320d-43ff-a11a-4930ca03cce6'
@@ -16,7 +16,7 @@ Author = 'Warren Frame/Matthew Hilton'
 #CompanyName = 'Unknown'
 
 # Copyright statement for this module
-Copyright = '(c) 2016 Warren F. All rights reserved.'
+Copyright = '(c) 2016 Warren F. All rights reserved. Modified by Matthew Hilton 2021'
 
 # Description of the functionality provided by this module
 Description = 'PowerShell Dependency Handler'
