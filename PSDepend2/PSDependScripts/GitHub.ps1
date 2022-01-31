@@ -457,7 +457,7 @@ if(($PSDependAction -contains 'Install') -and $ShouldInstall)
     }
 
     # Extract the zip file
-    if(($script:IsWindows) -and ($psEdition -eq 'Desktop'))
+    if (($script:IsWindows) -and ($psEdition -eq 'Desktop') -and ($null -eq $(Get-Command -Name Expand-Archive)))
     {
         $ZipFile = (New-Object -com shell.application).NameSpace($OutFile)
         $ZipDestination = (New-Object -com shell.application).NameSpace($OutPath)
