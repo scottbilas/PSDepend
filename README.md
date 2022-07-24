@@ -1,6 +1,10 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/4mwhsx9pkfpc1j48/branch/master?svg=true)](https://ci.appveyor.com/project/RamblingCookieMonster/psdepend/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/ns9lkbkvopuup853/branch/master?svg=true)](https://ci.appveyor.com/project/matt2005/psdepend2/branch/master)
 
-PSDepend
+## **This is a fork of PSDepend as the [master repo](https://rgithub.com/RamblingCookieMonster/PSDepend) appears to have been abandoned**
+
+I've created this so I fix some issues that are causing me pain. such as os detection not working correctly ps7 on windows
+
+PSDepend2
 ========
 
 This is a simple PowerShell dependency handler.  You might loosely compare it to `bundle install` in the Ruby world or `pip install -r requirements.txt` in the Python world.

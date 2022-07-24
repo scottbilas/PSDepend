@@ -180,7 +180,7 @@ Write-Verbose -Message "Am I on Windows? [$script:IsWindows]! Am I PS Core? [$sc
 $DependencyID = $Dependency.DependencyName
 $DependencyVersion = $Dependency.Version
 $DependencyTarget = $Dependency.Target
-$DependencyName = $DependencyID.Split("/")[1]
+$DependencyName = if ($Dependency.Name) {$Dependency.Name} Else {$DependencyID.Split("/")[1]}
 
 # Translate "" to "latest"
 if($DependencyVersion -eq "")
@@ -351,9 +351,9 @@ if($ShouldInstall)
             {
                 foreach($GitHubTag in $GitHubTags)
                 {
-                    if($GitHubTag.name -match "^\d+(?:\.\d+)+$" -and ($DependencyVersion -match "^\d+(?:\.\d+)+$" -or $DependencyVersion -eq "latest"))
+                    if($GitHubTag.name -match "^v?\d+(?:\.\d+)+$" -and ($DependencyVersion -match "^\d+(?:\.\d+)+$" -or $DependencyVersion -eq "latest"))
                     {
-                        $GitHubVersion = New-Object "System.Version" $GitHubTag.name
+                        $GitHubVersion = New-Object "System.Version" ($GitHubTag.name -replace '^v','')
 
                         if($DependencyVersion -Eq "latest")
                         {
@@ -445,7 +445,10 @@ if(($PSDependAction -contains 'Install') -and $ShouldInstall)
     $OutPath = Join-Path ([System.IO.Path]::GetTempPath()) ([guid]::NewGuid().guid)
     New-Item -ItemType Directory -Path $OutPath -Force | Out-Null
     $OutFile = Join-Path $OutPath "$DependencyVersion.zip"
+    $PreviousProgressPreference=$ProgressPreference
+    $ProgressPreference='SilentlyContinue'
     Invoke-RestMethod -Uri $URL -OutFile $OutFile
+    $ProgressPreference=$PreviousProgressPreference
 
     if(-not (Test-Path $OutFile))
     {
@@ -454,7 +457,7 @@ if(($PSDependAction -contains 'Install') -and $ShouldInstall)
     }
 
     # Extract the zip file
-    if($script:IsWindows)
+    if (($script:IsWindows) -and ($psEdition -eq 'Desktop') -and ($null -eq $(Get-Command -Name Expand-Archive)))
     {
         $ZipFile = (New-Object -com shell.application).NameSpace($OutFile)
         $ZipDestination = (New-Object -com shell.application).NameSpace($OutPath)

@@ -1,22 +1,22 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-RootModule = 'PSDepend.psm1'
+RootModule = 'PSDepend2.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.3.9'
+ModuleVersion = '0.4.3'
 
 # ID used to uniquely identify this module
 GUID = '63ea9e2a-320d-43ff-a11a-4930ca03cce6'
 
 # Author of this module
-Author = 'Warren Frame'
+Author = 'Warren Frame/Matthew Hilton'
 
 # Company or vendor of this module
 #CompanyName = 'Unknown'
 
 # Copyright statement for this module
-Copyright = '(c) 2016 Warren F. All rights reserved.'
+Copyright = '(c) 2016 Warren F. All rights reserved. Modified by Matthew Hilton 2021'
 
 # Description of the functionality provided by this module
 Description = 'PowerShell Dependency Handler'
@@ -52,7 +52,7 @@ PowerShellVersion = '3.0'
 # TypesToProcess = @()
 
 # Format files (.ps1xml) to be loaded when importing this module
-FormatsToProcess = 'PSDepend.Format.ps1xml'
+FormatsToProcess = 'PSDepend2.Format.ps1xml'
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 # NestedModules = @()
@@ -87,16 +87,16 @@ PrivateData = @{
          Tags = @('requirements', 'dependencies', 'dependency', 'manager', 'bundle', 'package')
 
         # A URL to the license for this module.
-         LicenseUri = 'https://github.com/RamblingCookieMonster/PSDepend/blob/master/LICENSE'
+         LicenseUri = 'https://github.com/matt2005/PSDepend/blob/master/LICENSE'
 
         # A URL to the main website for this project.
-         ProjectUri = 'https://github.com/RamblingCookieMonster/PSDepend/'
+         ProjectUri = 'https://github.com/matt2005/PSDepend/'
 
         # A URL to an icon representing this module.
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'Added various PowerShell Core fixes thanks to @lipkau!'
+        ReleaseNotes = 'Fork of RamblingCookieMonster/PSDepend'
 
     } # End of PSData hashtable
 
